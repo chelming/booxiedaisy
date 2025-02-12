@@ -1,0 +1,39 @@
+#include "booxiedaisy-layouts.dtsi"
+#include <dt-bindings/zmk/matrix_transform.h>
+
+&physical_layout0 {
+    transform = <&matrix_transform0>;
+};
+
+/ {
+    chosen {
+        zmk,kscan = &default_kscan;
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    matrix_transform0: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <2>;
+        rows = <2>;
+        map = <
+            RC(0,0) RC(1,1)
+        >;
+    };
+
+    default_kscan: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+	diode-direction = "col2row";
+        label = "default_kscan";
+        wakeup-source;
+
+        col-gpios =
+            <&pro_micro  9 (GPIO_ACTIVE_HIGH)>,
+            <&pro_micro 10 (GPIO_ACTIVE_HIGH)>
+            ;
+        row-gpios =
+            <&pro_micro  6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+
+};
