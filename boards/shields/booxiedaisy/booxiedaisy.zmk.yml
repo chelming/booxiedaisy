@@ -2,7 +2,7 @@ file_format: "1"
 id: booxiedaisy
 name: Booxie Daisy
 type: shield
-url: https://github.com/chelming/booxie-daisy
+url: https://github.com/chelming/booxiedaisy
 requires: [seeed_xiao_ble]
 features:
   - keys
