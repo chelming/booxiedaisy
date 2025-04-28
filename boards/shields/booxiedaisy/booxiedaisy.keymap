@@ -45,7 +45,6 @@
             display-name = "Base";
             bindings = <
                 &rpt &key_repeat C_VOLUME_UP    &rpt &key_repeat C_VOLUME_DOWN
-                //&kp C_VOLUME_UP    &kp C_VOLUME_DOWN
             >;
         };
     };
