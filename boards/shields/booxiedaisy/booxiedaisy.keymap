@@ -33,7 +33,7 @@
     combos {
         compatible = "zmk,combos";
         fn_combo {
-            timeout-ms = <150>;
+            timeout-ms = <250>;
             key-positions = <0 1>;
             bindings = <&fn_btns>;
         };
@@ -44,8 +44,8 @@
         default_layer {
             display-name = "Base";
             bindings = <
-                // &rpt &key_repeat C_VOLUME_UP    &rpt &key_repeat C_VOLUME_DOWN
-                &kp C_VOLUME_UP    &kp C_VOLUME_DOWN
+                &rpt &key_repeat C_VOLUME_UP    &rpt &key_repeat C_VOLUME_DOWN
+                //&kp C_VOLUME_UP    &kp C_VOLUME_DOWN
             >;
         };
     };
