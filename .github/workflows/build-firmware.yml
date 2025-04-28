@@ -2,8 +2,9 @@ name: Build ZMK firmware
 on:
   push:
     paths:
-      - "build.yaml"
-      - ".github/workflows/build-firmware.yml"  
+      - "**.yml"
+      - "**.yaml"
+      - "boards/**"
   pull_request:
   workflow_dispatch:
 
