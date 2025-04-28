@@ -42,7 +42,7 @@
     keymap {
         compatible = "zmk,keymap";
         default_layer {
-            display-name = "Base"
+            display-name = "Base";
             bindings = <
                 &rpt 0 C_VOLUME_UP    &rpt 0 C_VOLUME_DOWN
             >;
