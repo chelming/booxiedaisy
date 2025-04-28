@@ -19,7 +19,7 @@
             bindings = <&ind_bat>, <&studio_unlock>, <&bt BT_CLR>;
             label = "Fn buttons (battery, unlock, bt clr";
         };
-        rpt: repeat {
+        rpt: hold_tap_key_repeat {
             compatible = "zmk,behavior-hold-tap";
             label = "Repeat when held";
             #binding-cells = <2>;
@@ -44,7 +44,7 @@
         default_layer {
             display-name = "Base";
             bindings = <
-                &rpt 0 C_VOLUME_UP    &rpt 0 C_VOLUME_DOWN
+                &rpt &key_repeat C_VOLUME_UP    &rpt &key_repeat C_VOLUME_DOWN
             >;
         };
     };
