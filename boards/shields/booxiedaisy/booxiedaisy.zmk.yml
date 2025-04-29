@@ -1,6 +1,6 @@
 file_format: "1"
 id: booxiedaisy
-name: Booxie Daisy
+name: BooxieDaisy
 type: shield
 url: https://github.com/chelming/booxiedaisy
 requires: [seeed_xiao_ble]
