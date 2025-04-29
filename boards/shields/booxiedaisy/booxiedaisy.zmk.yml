@@ -3,6 +3,6 @@ id: booxiedaisy
 name: BooxieDaisy
 type: shield
 url: https://github.com/chelming/booxiedaisy
-requires: [seeed_xiao_ble]
+requires: [seeeduino_xiao_ble]
 features:
   - keys
