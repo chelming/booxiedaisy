@@ -11,6 +11,15 @@
         zmk,physical-layout = &physical_layout0;
     };
 
+    matrix_transform0: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        rows = <1>;
+        columns = <2>;
+        map = <
+            RC(0,0) RC(0,1)
+        >;  
+    };
+
     kscan0: kscan_composite {
         compatible = "zmk,kscan-composite";
         rows = <1>;
