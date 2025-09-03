@@ -7,32 +7,39 @@
 
 / {
     chosen {
-        zmk,kscan = &default_kscan;
+        zmk,kscan = &kscan0;
         zmk,physical-layout = &physical_layout0;
     };
 
-    matrix_transform0: keymap_transform_0 {
-        compatible = "zmk,matrix-transform";
+    kscan0: kscan_composite {
+        compatible = "zmk,kscan-composite";
+
+        rows = <1>;
         columns = <2>;
-        rows = <2>;
-        map = <
-            RC(1,1) RC(0,0)
-        >;
+
+        // this is the switch between d1 and d3
+        matrix {
+            kscan = <&kscan1>;
+        };
+
+        // this is the switch between GND and d10
+        direct {
+            kscan = <&kscan2>;
+            col-offset = <1>;
+        };
     };
 
-    default_kscan: kscan {
+    kscan1: kscan_matrix {
         compatible = "zmk,kscan-gpio-matrix";
-	    diode-direction = "col2row";
-        label = "default_kscan";
+        diode-direction = "col2row";
         wakeup-source;
-
-        col-gpios =
-            <&xiao_d  6 (GPIO_ACTIVE_HIGH)>,
-            <&xiao_d  7 (GPIO_ACTIVE_HIGH)>
-            ;
-        row-gpios =
-            <&xiao_d  3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ;
+        col-gpios = <&xiao_d 1 (GPIO_ACTIVE_HIGH)>;
+        row-gpios = <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
-};
+
+    kscan2: kscan_direct {
+        compatible = "zmk,kscan-gpio-direct";
+        wakeup-source;
+        input-gpios = <&xiao_d 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+}
