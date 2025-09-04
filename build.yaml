@@ -3,4 +3,4 @@ include:
   - board: seeeduino_xiao_ble
     shield: booxiedaisy rgbled_adapter
     snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_KEYBOARD_NAME=\"Lauren's Booxiedaisy\" 
