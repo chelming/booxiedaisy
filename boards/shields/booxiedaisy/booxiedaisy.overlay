@@ -24,6 +24,7 @@
         compatible = "zmk,kscan-composite";
         rows = <1>;
         columns = <2>;
+        wakeup-source;
 
         // this is the switch between d1 and d3
         matrix {
